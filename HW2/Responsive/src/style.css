@@ -1,0 +1,165 @@
+/*
+ * Feel free to change name of colors if you need it
+ * Feel free to add new colors if you need it
+ */
+/*:root {*/
+/*    --bg-color--dark: #0a1223;*/
+/*    --bg-color--light: #fff;*/
+/*    --link: #5d5d5d;*/
+/*    --link--active: #54597d;*/
+/*    --link--hover: #54597d;*/
+/*    --article-title: #ddd;*/
+/*    --article-title--dark: #000;*/
+/*    --thumbnail--description: #5d5d5d;*/
+/*}*/
+*{
+    margin: 0;
+    outline: none;
+    padding: 0;
+    font-family: Arial;
+    list-style: none;
+    text-decoration: none;
+}
+.container{
+    background-color: #0a1223;
+    width: 100%;
+}
+header{
+    background-color: transparent;
+    display: flex;
+    justify-content: flex-end;
+    width: 98%;
+    padding-top:20px;
+}
+ul{
+    display: flex;
+    width: 20%;
+    justify-content: space-between;
+}
+ul li{
+    color: #5d5d5d;;
+    font-size: 20px;
+}
+ul li:hover{
+    color: #54597d;
+}
+h1{
+    text-align: center;
+    color: white;
+    font-size: 80px;
+    margin-top:200px ;
+}
+.list-facts{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150px;
+}
+.text-img{
+    display: flex;
+    justify-content: space-between;
+    width: 65%;
+    margin-bottom: 60px;
+}
+.reverse-box{
+    flex-direction: row-reverse;
+}
+.text-img img{
+    width: 500px;
+    height: 250px;
+}
+.text{
+    width: 550px;
+    color: white;
+}
+.text p{
+    color: #5d5d5d;
+}
+h2{
+    color: white;
+    font-size: 35px;
+    margin-bottom: 20px;
+    background: -webkit-linear-gradient(left, white, black);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+  /* These styles are needed only for media query max-width: 575px */
+
+  /* The 'Up' button (circle button at right bottom corner) */
+  /* --btn-color: #fff;
+  --btn-bg-color: #5ebcff;
+
+  --navigation-border-bottom: #ddd;
+  --thumbnail-title: #484747;
+} */
+
+@media screen and (max-width: 991px) {
+    header {
+        justify-content: center;
+    }
+    ul {
+        width: 300px;
+        justify-content: space-between;
+    }
+    h1 {
+        text-align: center;
+        color: white;
+        font-size: 61px;
+    }
+    .text-img {
+        flex-direction: column;
+        align-items:center;
+    }
+    .text{
+        margin-bottom: 35px;
+    }
+    .reverse-box {
+        flex-direction: column;
+    }
+}
+@media screen and (max-width: 571px) {
+    .container{
+        background-color: white;
+    }
+    h1 {
+        color: black;
+        font-size: 61px;
+        margin-top: 100px;
+    }
+    h2{
+        -webkit-text-fill-color: currentColor;
+        color: #5d5d5d;
+        background: none;
+    }
+    .text {
+        width: 260px;
+    }
+    .text-img img {
+        width: 300px;
+        height: 150px;
+    }
+    .text-main{
+        width: 60%;
+        margin: 0 auto;
+    }
+    header {
+         justify-content: flex-start;
+     }
+    ul {
+        flex-direction: column;
+        width: 100%;
+    }
+    ul a {
+        border-bottom: 1px  solid #5d5d5d;
+        margin: 0 0 15px;
+    }
+    ul li {
+        margin: 0 0 10px 20px;
+    }
+
+    ul li:hover {
+        font-weight: bold;
+    }
+}
