@@ -1,5 +1,5 @@
-let amount = prompt('Enter the amount of money');
-let discount = prompt('Enter discount');
+let amount = parseFloat(prompt('Enter the amount of money'));
+let discount = parseFloat(prompt('Enter discount'));
 let afterDiscount = 0;
 
 function func(amount, discount) {

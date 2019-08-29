@@ -1,5 +1,5 @@
-let a = prompt('Enter length of side A');
-let b = prompt('Enter length of side B');
+let a = parseFloat(prompt('Enter length of side A'));
+let b = parseFloat(prompt('Enter length of side B'));
 let angle = prompt('Enter angle');
 
 function calc(a,b,angle) {
