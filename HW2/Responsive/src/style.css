@@ -24,7 +24,7 @@
     background-color: #0a1223;
     width: 100%;
 }
-header{
+nav{
     background-color: transparent;
     display: flex;
     justify-content: flex-end;
@@ -96,7 +96,7 @@ h2{
 } */
 
 @media screen and (max-width: 991px) {
-    header {
+    nav {
         justify-content: center;
     }
     ul {
@@ -144,7 +144,7 @@ h2{
         width: 60%;
         margin: 0 auto;
     }
-    header {
+    nav {
          justify-content: flex-start;
      }
     ul {
