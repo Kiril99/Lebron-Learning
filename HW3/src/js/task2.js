@@ -1,22 +1,18 @@
-let firstLengthSide = prompt('Enter a length of side');
-let secondLengthSide = prompt('Enter b length of side');
+let a = prompt('Enter length of side A');
+let b = prompt('Enter length of side B');
 let angle = prompt('Enter angle');
 
-function func(firstLengthSide, secondLengthSide,angle) {
-
-    if (amount <= 0){
-        console.log('Invalid data');
-    }
-    else {
-        afterDiscount= amount - ( amount*discount/100 );
-        console.log('input data ' + firstLengthSide + '(a length), ' + secondLengthSide + '(b length):'+ angle + '(a-angle):');
-        console.log('c length: ' + amount + '');
-        console.log('Discount: ' + discount + '');
-        console.log('Price without discount: ' + amount + '');
-        console.log('Price with discount: ' +afterDiscount.toFixed(2)+'');
-        amount = amount - afterDiscount;
-        console.log('Saved: '+amount+'');
-
-    }
+function func(a,b,angle) {
+    var y = Math.cos(angle * Math.PI / 180);
+    var c2 = (b*b) + (a*a) - (2*b*a)* y;
+    var c = Math.sqrt(c2);
+    var p = c + b + a;
+    var pP = p/2;
+    var s2 = pP * (pP-a)*(pP-b)*(pP-c);
+    var s = Math.sqrt(s2);
+    console.log('input data '+a+'(a length), '+b+'(b length), '+angle+'(α- angle):');
+    console.log('C length:'+c+'');
+    console.log('square:'+s+'');
+    console.log('perimeter:'+p+'');
 }
-func(firstLengthSide,secondLengthSide,angle);
+func(a,b,angle);
