@@ -2,7 +2,7 @@ let a = prompt('Enter length of side A');
 let b = prompt('Enter length of side B');
 let angle = prompt('Enter angle');
 
-function func(a,b,angle) {
+function calc(a,b,angle) {
     var y = Math.cos(angle * Math.PI / 180);
     var c2 = (b*b) + (a*a) - (2*b*a)* y;
     var c = Math.sqrt(c2);
@@ -15,4 +15,4 @@ function func(a,b,angle) {
     console.log('square:'+s+'');
     console.log('perimeter:'+p+'');
 }
-func(a,b,angle);
+calc(a,b,angle);
