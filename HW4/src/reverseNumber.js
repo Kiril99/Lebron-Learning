@@ -1,5 +1,4 @@
 function reverseNumber(x) {
-    var result = x.toString().split("").reverse().join("")
-    return Number(result);
+   return  parseFloat(x.toString().split("").reverse().join("")) * Math.sign(x);
 }
-reverseNumber(321);
+console.log(reverseNumber(321));

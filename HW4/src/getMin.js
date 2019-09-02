@@ -7,4 +7,4 @@ function getMin(a,b,c,d){
     }
     return result
 }
-getMin(2,3,0,1);
+console.log(getMin(2,3,0,1));
