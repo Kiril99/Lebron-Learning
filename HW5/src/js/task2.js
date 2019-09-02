@@ -1,88 +1,74 @@
-function beginGameQuestion (){
+function beginGameQuestion() {
     var startGame = confirm('Do you want to play a game?');
-
     if (startGame === false) {
         alert('You did not become a millionaire, but can')
     }
-
-    if (startGame === true){
-
+    if (startGame === true) {
         var bigPrize = 10;
         var middlePrize = 5;
         var smallPrize = 3;
-        var firstStep = '5';
-        var secondStep = '10';
+        var step = 5;
         var attempt = 1;
 
         function letsAgainPlay() {
             let againGame = confirm('Do you want to play again?');
             if (againGame === true) {
-                attempt = 0;
-                beginGameQuestion()
+                attempt = 1;
+                game(step, bigPrize, middlePrize, smallPrize, attempt)
+            }
+            else{
+                alert('buy')
             }
         }
+        function game(step, bigPrize, middlePrize, smallPrize, attempt) {
+            var totalPrize = 0;
 
-        function game(count, step, bigPrize, middlePrize, smallPrize) {
-            var totalPrize=0;
-
-            if (attempt<=3) {
-                const num = Math.ceil(Math.random() * count);
+            function checkAnswer(prize) {
+                let nextStep = confirm('Congratulation! Your prize is ' + prize + '$ Do you want continue?');
+                if (nextStep === false) {
+                    alert('Thank you for a game. Your prize is:' + prize+ '$');
+                    letsAgainPlay()
+                }
+                else if (nextStep === true) {
+                    step = step*2;
+                    attempt = 1;
+                    game(step, bigPrize * 3, middlePrize * 3, smallPrize +4, attempt);
+                }
+            }
+            if (attempt <= 3) {
+                const num = Math.ceil(Math.random() * step);
                 alert(num);
                 const gnum = prompt(`
                 Enter a number from 1 to ${step}
                 Attempt: ${attempt}
-                Total prize:  ${totalPrize}`);
+                Total prize:  ${totalPrize}
+                You can to have ${bigPrize}$`);
 
                 if (gnum == num && attempt === 1) {
-                    let nextStep =confirm('Congratulation! Your prize is' + bigPrize +'$ Do you want continue?');
-                    if (nextStep === false){
-                        alert('Thank you for a game. Your prize is:' + bigPrize);
-                        letsAgainPlay()
-                    }
-                    if (nextStep === true){
-                        game(10, secondStep, bigPrize*3, middlePrize*3, smallPrize*3);
-                        attempt = 0
-                    }
+                    checkAnswer(bigPrize)
                 }
-                else if (gnum == num && attempt ===2) {
-                    let nextStep = confirm('Congratulation! Your prize is ' + middlePrize +'$ Do you want continue?');
-                    if (nextStep === false){
-                        alert('Thank you for a game. Your prize is:' + middlePrize);
-                        letsAgainPlay()
-                    }
-                    if (nextStep === true){
-                        game(10, secondStep, bigPrize*3, middlePrize*3, smallPrize*3);
-                        attempt = 0
-                    }
+                else if (gnum == num && attempt === 2) {
+                    checkAnswer(middlePrize)
                 }
-                else if (gnum == num && attempt ===3) {
-                    let nextStep =confirm('Congratulation! Your prize is ' + smallPrize +'$ Do you want continue?');
-                    if (nextStep === false){
-                        alert('Thank you for a game. Your prize is:' + smallPrize);
-                        letsAgainPlay()
-                    }
-                    if (nextStep === true){
-                        game(10, secondStep, bigPrize*3, middlePrize*3, smallPrize*3);
-                        attempt = 0
-
-                    }
+                else if (gnum == num && attempt === 3) {
+                    checkAnswer(smallPrize)
+                }
+                else if (attempt === 3) {
+                    letsAgainPlay()
                 }
                 else {
-                    if (attempt<3) {
-                        attempt++;
-                        alert('Thank you for a game. Your prize is 0');
-                        game()
-                    }
-                    else if(attempt === 3){
-                        beginGameQuestion();
-                        attempt = 0
+                    if (attempt < 3) {
+                        attempt = attempt +1;
+                        alert(`You lose! You have ${attempt} attempt`);
+                        game(step, bigPrize, middlePrize, smallPrize, attempt)
                     }
                 }
             }
         }
-        game(5, firstStep, bigPrize, middlePrize, smallPrize)
+        game(step, bigPrize, middlePrize, smallPrize, attempt)
     }
 }
+
 beginGameQuestion();
 
 
