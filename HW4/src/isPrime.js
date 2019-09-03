@@ -1,6 +1,6 @@
-function isPrime(x) {
-    if (x/x === 1 && x/1 === x){
-        return true
-    }
+function isPrime(num) {
+    for(var i = 2; i < num; i++)
+        if(num % i === 0) return false;
+    return num > 1;
 }
-isPrime(5);
+isPrime(6)
