@@ -14,6 +14,7 @@ function calc(firstSide,secondSide,angle) {
                  input data ${firstSide}(a length), ${secondSide}(b length), ${angle}(α- angle):
                  C length: ${Math.round(c)}
                  square:'${Math.round(s)}
-                 perimeter: ${Math.round(p)}`);
+                 perimeter: ${Math.round(p)}
+                 `);
 }
 calc(firstSide,secondSide,angle);
