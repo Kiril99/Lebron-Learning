@@ -1,22 +1,20 @@
-let firstLengthSide = prompt('Enter a length of side');
-let secondLengthSide = prompt('Enter b length of side');
+let firstSide = parseFloat(prompt('Enter length of side A'));
+let secondSide = parseFloat(prompt('Enter length of side B'));
 let angle = prompt('Enter angle');
 
-function func(firstLengthSide, secondLengthSide,angle) {
-
-    if (amount <= 0){
-        console.log('Invalid data');
-    }
-    else {
-        afterDiscount= amount - ( amount*discount/100 );
-        console.log('input data ' + firstLengthSide + '(a length), ' + secondLengthSide + '(b length):'+ angle + '(a-angle):');
-        console.log('c length: ' + amount + '');
-        console.log('Discount: ' + discount + '');
-        console.log('Price without discount: ' + amount + '');
-        console.log('Price with discount: ' +afterDiscount.toFixed(2)+'');
-        amount = amount - afterDiscount;
-        console.log('Saved: '+amount+'');
-
-    }
+function calc(firstSide,secondSide,angle) {
+    var y = Math.cos(angle * Math.PI / 180);
+    var c2 = (secondSide*secondSide) + (firstSide*firstSide) - (2*secondSide*firstSide)* y;
+    var c = Math.sqrt(c2);
+    var p = c + secondSide + firstSide;
+    var pP = p/2;
+    var s2 = pP * (pP-firstSide)*(pP-secondSide)*(pP-c);
+    var s = Math.sqrt(s2);
+    console.log(`
+                 input data ${firstSide}(a length), ${secondSide}(b length), ${angle}(α- angle):
+                 C length: ${Math.round(c)}
+                 square:'${Math.round(s)}
+                 perimeter: ${Math.round(p)}
+                 `);
 }
-func(firstLengthSide,secondLengthSide,angle);
+calc(firstSide,secondSide,angle);
