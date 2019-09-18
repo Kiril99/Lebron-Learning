@@ -1,6 +1,6 @@
 var data = document.getElementById('title-input');
 var addButton = document.getElementById('add-button');
-var list = document.getElementsByClassName('list-box')[0];
+var list = document.getElementsByClassName('list-wrapper')[0];
 
 
  addButton.addEventListener('click', function(event) {
@@ -11,20 +11,19 @@ var list = document.getElementsByClassName('list-box')[0];
  },false);
 
 document.querySelector('ul').addEventListener('click', function(event) {
-        if (event.path[0].className !== 'close' && event.path[0].classList[1] !== 'activeElement') {
+        if (event.path[0].className !== 'close' && event.path[0].classList[1] !== 'active') {
             let element = event.path[0].children[0].children[1];
             element.style.textDecoration = "line-through";
             let check = event.path[0].children[0].children[0];
             check.style.visibility = 'unset';
-            event.path[0].classList.add('activeElement');
+            event.path[0].classList.add('active');
         }
-        else if (event.path[0].className !== 'close' && event.path[0].classList[1] === 'activeElement') {
+        else if (event.path[0].className !== 'close' && event.path[0].classList[1] === 'active') {
             let element = event.path[0].children[0].children[1];
             element.style.textDecoration = "none";
             let check = event.path[0].children[0].children[0];
             check.style.visibility = 'hidden';
-            event.path[0].classList.remove('activeElement');
-            console.log(event.path[0].classList)
+            event.path[0].classList.remove('active');
         }
         else {
             event.path[1].remove()

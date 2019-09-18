@@ -35,7 +35,7 @@ h1{
   background: #777777;
     color: white;
 }
-.list-box{
+.list-wrapper{
     width: 100%;
 }
 li{
@@ -66,11 +66,16 @@ li:hover{
 .two{
     background: #e7e7e7 ;
 }
-.check{
+.one .text-list .check{
     visibility: hidden;
     margin-right: 10px;
-    text-decoration: none !important;
+    text-decoration: none;
 }
-.activeElement{
+.two .text-list .check{
+    visibility: hidden;
+    margin-right: 10px;
+    text-decoration: none;
+}
+.active{
     background: silver;
 }
